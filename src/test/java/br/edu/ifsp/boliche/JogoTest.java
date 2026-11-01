@@ -79,4 +79,14 @@ class JogoTest {
 
         assertEquals(150, jogo.pontuacao());
     }
+
+    @Test
+    void jogoPerfeito() {
+        for (int i = 0; i < 12; i++) {
+            jogo.jogar(10);
+        }
+
+        assertEquals(300, jogo.pontuacao());
+        assertTrue(jogo.encerrado());
+    }
 }
