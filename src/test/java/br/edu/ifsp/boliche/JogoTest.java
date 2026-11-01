@@ -89,4 +89,19 @@ class JogoTest {
         assertEquals(300, jogo.pontuacao());
         assertTrue(jogo.encerrado());
     }
+
+    @Test
+    void partidaMista() {
+        int[] pinos = {
+            10, 7, 3, 9, 0, 10, 0, 8,
+            8, 2, 0, 6, 10, 10, 10, 8, 1
+        };
+
+        for (int pino : pinos) {
+            jogo.jogar(pino);
+        }
+
+        assertEquals(167, jogo.pontuacao());
+        assertTrue(jogo.encerrado());
+    }
 }
