@@ -117,4 +117,12 @@ class JogoTest {
         assertThrows(IllegalArgumentException.class,
                 () -> jogo.jogar(11));
     }
+
+    @Test
+    void rejeitaFrameComMaisDeDezPinos() {
+        jogo.jogar(7);
+
+        assertThrows(IllegalArgumentException.class,
+                () -> jogo.jogar(4));
+    }
 }
