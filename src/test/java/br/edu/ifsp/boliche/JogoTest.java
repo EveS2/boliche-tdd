@@ -70,4 +70,13 @@ class JogoTest {
 
         assertEquals(24, jogo.pontuacao());
     }
+
+    @Test
+    void todosOsFramesComSpare() {
+        for (int i = 0; i < 21; i++) {
+            jogo.jogar(5);
+        }
+
+        assertEquals(150, jogo.pontuacao());
+    }
 }
