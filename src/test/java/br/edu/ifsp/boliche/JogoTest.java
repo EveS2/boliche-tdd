@@ -42,4 +42,17 @@ class JogoTest {
 
         assertEquals(20, jogo.pontuacao());
     }
+
+    @Test
+    void umSpare() {
+        jogo.jogar(5);
+        jogo.jogar(5);
+        jogo.jogar(3);
+
+        for (int i = 0; i < 17; i++) {
+            jogo.jogar(0);
+        }
+
+        assertEquals(16, jogo.pontuacao());
+    }
 }
