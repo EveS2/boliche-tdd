@@ -181,4 +181,21 @@ class JogoTest {
         assertTrue(jogo.encerrado());
         assertEquals(20, jogo.pontuacao());
     }
+
+    @Test
+    void jogadaInvalidaNaoAlteraFrame() {
+        jogo.jogar(7);
+
+        assertThrows(IllegalArgumentException.class,
+                () -> jogo.jogar(4));
+
+        jogo.jogar(3);
+
+        for (int i = 0; i < 18; i++) {
+            jogo.jogar(0);
+        }
+
+        assertEquals(10, jogo.pontuacao());
+        assertTrue(jogo.encerrado());
+    }
 }
