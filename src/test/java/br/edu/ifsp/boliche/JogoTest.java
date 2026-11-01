@@ -57,4 +57,17 @@ class JogoTest {
 
         assertEquals(16, jogo.pontuacao());
     }
+
+    @Test
+    void umStrike() {
+        jogo.jogar(10);
+        jogo.jogar(3);
+        jogo.jogar(4);
+
+        for (int i = 0; i < 16; i++) {
+            jogo.jogar(0);
+        }
+
+        assertEquals(24, jogo.pontuacao());
+    }
 }
