@@ -30,6 +30,20 @@ public class Jogo {
     }
 
     public boolean encerrado() {
+        if (quantidadeJogadas == 12) {
+            boolean perfeito = true;
+
+            for (int i = 0; i < 12; i++) {
+                if (jogadas[i] != 10) {
+                    perfeito = false;
+                }
+            }
+
+            if (perfeito) {
+                return true;
+            }
+        }
+
         return quantidadeJogadas == 20;
     }
 }
