@@ -164,4 +164,21 @@ class JogoTest {
         assertTrue(jogo.encerrado());
         assertEquals(13, jogo.pontuacao());
     }
+
+    @Test
+    void encerraAposDoisBonusDeStrike() {
+        for (int i = 0; i < 18; i++) {
+            jogo.jogar(0);
+        }
+
+        jogo.jogar(10);
+        jogo.jogar(8);
+
+        assertFalse(jogo.encerrado());
+
+        jogo.jogar(2);
+
+        assertTrue(jogo.encerrado());
+        assertEquals(20, jogo.pontuacao());
+    }
 }
