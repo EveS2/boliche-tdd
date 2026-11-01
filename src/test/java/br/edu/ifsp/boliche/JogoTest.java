@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class JogoTest {
 
     @Test
-    void testeInicial() {
-        // Verifica se o JUnit está funcionando.
+    void deveCriarJogo() {
+        Jogo jogo = new Jogo();
     }
 }
