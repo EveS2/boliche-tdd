@@ -1,6 +1,7 @@
 package br.edu.ifsp.boliche;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -145,5 +146,22 @@ class JogoTest {
         }
 
         assertTrue(jogo.encerrado());
+    }
+
+    @Test
+    void encerraAposBonusDeSpare() {
+        for (int i = 0; i < 18; i++) {
+            jogo.jogar(0);
+        }
+
+        jogo.jogar(5);
+        jogo.jogar(5);
+
+        assertFalse(jogo.encerrado());
+
+        jogo.jogar(3);
+
+        assertTrue(jogo.encerrado());
+        assertEquals(13, jogo.pontuacao());
     }
 }
