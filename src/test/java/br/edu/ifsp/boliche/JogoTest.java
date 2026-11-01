@@ -198,4 +198,14 @@ class JogoTest {
         assertEquals(10, jogo.pontuacao());
         assertTrue(jogo.encerrado());
     }
+
+    @Test
+    void rejeitaJogadaDepoisDoJogoPerfeito() {
+        for (int i = 0; i < 12; i++) {
+            jogo.jogar(10);
+        }
+
+        assertThrows(IllegalStateException.class,
+                () -> jogo.jogar(0));
+    }
 }
