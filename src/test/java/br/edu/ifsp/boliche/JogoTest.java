@@ -137,4 +137,13 @@ class JogoTest {
         assertThrows(IllegalStateException.class,
                 () -> jogo.jogar(1));
     }
+
+    @Test
+    void encerraAposVinteJogadasAbertas() {
+        for (int i = 0; i < 20; i++) {
+            jogo.jogar(1);
+        }
+
+        assertTrue(jogo.encerrado());
+    }
 }
