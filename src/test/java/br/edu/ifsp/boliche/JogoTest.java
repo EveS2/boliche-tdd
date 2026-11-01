@@ -208,4 +208,10 @@ class JogoTest {
         assertThrows(IllegalStateException.class,
                 () -> jogo.jogar(0));
     }
+
+    private void repetirJogada(int vezes, int pinos) {
+        for (int i = 0; i < vezes; i++) {
+            jogo.jogar(pinos);
+        }
+    }
 }
