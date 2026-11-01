@@ -111,4 +111,10 @@ class JogoTest {
         assertThrows(IllegalArgumentException.class,
                 () -> jogo.jogar(-1));
     }
+
+    @Test
+    void rejeitaMaisDeDezPinos() {
+        assertThrows(IllegalArgumentException.class,
+                () -> jogo.jogar(11));
+    }
 }
