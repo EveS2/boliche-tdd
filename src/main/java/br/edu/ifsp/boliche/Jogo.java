@@ -14,13 +14,16 @@ public class Jogo {
         int indice = 0;
 
         for (int frame = 0; frame < 10; frame++) {
-            if (jogadas[indice] + jogadas[indice + 1] == 10) {
+            if (jogadas[indice] == 10) {
+                total += 10 + jogadas[indice + 1] + jogadas[indice + 2];
+                indice++;
+            } else if (jogadas[indice] + jogadas[indice + 1] == 10) {
                 total += 10 + jogadas[indice + 2];
+                indice += 2;
             } else {
                 total += jogadas[indice] + jogadas[indice + 1];
+                indice += 2;
             }
-
-            indice += 2;
         }
 
         return total;
