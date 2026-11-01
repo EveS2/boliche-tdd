@@ -125,4 +125,16 @@ class JogoTest {
         assertThrows(IllegalArgumentException.class,
                 () -> jogo.jogar(4));
     }
+
+    @Test
+    void rejeitaJogadaAposFim() {
+        for (int i = 0; i < 20; i++) {
+            jogo.jogar(0);
+        }
+
+        assertTrue(jogo.encerrado());
+
+        assertThrows(IllegalStateException.class,
+                () -> jogo.jogar(1));
+    }
 }
