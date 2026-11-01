@@ -28,4 +28,15 @@ class JogoTest {
         assertEquals(0, jogo.pontuacao());
         assertTrue(jogo.encerrado());
     }
+
+    @Test
+    void umPinoPorJogada() {
+        Jogo jogo = new Jogo();
+
+        for (int i = 0; i < 20; i++) {
+            jogo.jogar(1);
+        }
+
+        assertEquals(20, jogo.pontuacao());
+    }
 }
